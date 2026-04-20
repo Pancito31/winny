@@ -1,0 +1,351 @@
+/* ========================================
+   ESTILO PROFESIONAL - SENADORES NACIONALES
+   Diseño institucional elegante
+======================================== */
+
+/* Reset y variables CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #1e3c72;
+    --secondary-blue: #2a5298;
+    --gold-accent: #d4af37;
+    --gold-light: #ffd700;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-md: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-lg: 0 25px 60px rgba(0,0,0,0.18);
+    --border-light: rgba(255,255,255,0.6);
+}
+
+body {
+    font-family: 'Inter', 'Roboto', -apple-system, sans-serif;
+    background: linear-gradient(135deg, 
+        var(--primary-blue) 0%, 
+        var(--secondary-blue) 50%, 
+        #0f2027 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* TÍTULO PRINCIPAL */
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--bg-white);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-accent), var(--gold-light));
+    border-radius: 2px;
+}
+
+h1::before {
+    width: 150px;
+}
+
+h1::after {
+    width: 100px;
+    bottom: -8px;
+    opacity: 0.8;
+}
+
+/* TABLA INSTITUCIONAL */
+table {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(25px);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-light);
+    font-size: 1rem;
+}
+
+th {
+    background: linear-gradient(135deg, 
+        var(--primary-blue) 0%, 
+        var(--secondary-blue) 100%);
+    color: var(--bg-white);
+    padding: 24px 20px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: relative;
+    white-space: nowrap;
+}
+
+th:nth-child(1) { width: 18%; }
+th:nth-child(2) { width: 22%; }
+th:nth-child(3) { width: 25%; }
+th:nth-child(4) { width: 35%; }
+
+td {
+    padding: 24px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+tr:nth-child(even) {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.95) 0%, 
+        rgba(248,249,250,0.9) 100%);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* EFECTO HOVER FILAS */
+tr:hover {
+    background: linear-gradient(135deg, 
+        rgba(212,175,55,0.12) 0%, 
+        rgba(255,215,0,0.08) 100%);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* NOMBRES */
+td:nth-child(1) {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding-left: 28px;
+    position: relative;
+}
+
+td:nth-child(1)::before {
+    content: '👤';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* PARTIDOS POLÍTICOS */
+td:nth-child(2) {
+    font-weight: 600;
+    color: var(--secondary-blue);
+    background: rgba(52,152,219,0.08);
+    padding: 18px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(52,152,219,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+td:nth-child(2)::before {
+    content: '⚖️';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+/* IMÁGENES */
+td:nth-child(3) img {
+    width: 140px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 
+        0 12px 32px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+    border: 3px solid rgba(212,175,55,0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+td:nth-child(3) img:hover {
+    transform: scale(1.08) translateY(-6px);
+    border-color: var(--gold-accent);
+    box-shadow: 
+        0 28px 60px rgba(212,175,55,0.35),
+        inset 0 1px 0 rgba(255,255,255,1);
+}
+
+/* CV */
+td:nth-child(4) {
+    font-style: italic;
+    color: var(--text-muted);
+    font-weight: 500;
+    background: linear-gradient(135deg, 
+        rgba(44,62,80,0.04), 
+        rgba(52,152,219,0.04));
+    padding: 22px 28px;
+    border-radius: 14px;
+    border-left: 5px solid var(--accent-blue);
+    position: relative;
+    line-height: 1.7;
+}
+
+td:nth-child(4)::before {
+    content: '📋';
+    position: absolute;
+    left: 16px;
+    top: 22px;
+    font-size: 1.3rem;
+    opacity: 0.6;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+    table {
+        font-size: 0.95rem;
+    }
+    
+    th, td {
+        padding: 20px 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+        border-radius: 16px;
+    }
+    
+    td:nth-child(3) img {
+        width: 120px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    table {
+        font-size: 0.85rem;
+        border-radius: 12px;
+    }
+    
+    th, td {
+        padding: 16px 12px;
+    }
+    
+    td:nth-child(3) img {
+        width: 100px;
+        height: 120px;
+    }
+    
+    td:nth-child(1) {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 12px;
+    }
+    
+    th, td {
+        min-width: 140px;
+    }
+}
+
+/* ANIMACIONES */
+tr {
+    animation: slideInUp 0.7s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.15s; }
+tr:nth-child(3) { animation-delay: 0.2s; }
+tr:nth-child(4) { animation-delay: 0.25s; }
+tr:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLLBAR INSTITUCIONAL */
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--gold-accent), var(--gold-light));
+    border-radius: 10px;
+    border: 2px solid var(--border-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-accent));
+}
+
+/* LOADING BAR */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-accent), var(--gold-light));
+    animation: progress 4s linear infinite;
+    z-index: 9999;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}

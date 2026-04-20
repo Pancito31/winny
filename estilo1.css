@@ -1,0 +1,325 @@
+/* ========================================
+   ESTILO PRESIDENCIAL - ELECCIONES 2026
+======================================== */
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, 
+        #1e3c72 0%, 
+        #2a5298 25%, 
+        #0f2027 50%, 
+        #203a43 75%, 
+        #2c5364 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Título principal - Estilo presidencial */
+h1 {
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #f8f9fa;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+    border-radius: 2px;
+}
+
+h1::before {
+    width: 120px;
+}
+
+h1::after {
+    width: 80px;
+    bottom: -10px;
+    opacity: 0.7;
+}
+
+/* Listas de candidatos */
+ul, ol {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.15),
+        0 0 0 1px rgba(255,255,255,0.5);
+    max-width: 500px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+ul {
+    border-left: 6px solid #e74c3c;
+}
+
+ol {
+    border-left: 6px solid #3498db;
+}
+
+ul li, ol li {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 15px 25px;
+    margin: 12px 0;
+    background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(52,152,219,0.1));
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+ul li::before {
+    content: '★';
+    position: absolute;
+    left: 15px;
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+ol li::before {
+    content: '⚡';
+    position: absolute;
+    left: 15px;
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+ul li:hover, ol li:hover {
+    transform: translateX(15px);
+    box-shadow: 0 15px 30px rgba(231,76,60,0.25);
+    background: linear-gradient(135deg, rgba(231,76,60,0.2), rgba(52,152,219,0.2));
+}
+
+/* Tabla principal - Diseño institucional */
+table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    border: 2px solid rgba(212,175,55,0.3);
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+th {
+    background: linear-gradient(135deg, 
+        #2c3e50 0%, 
+        #34495e 50%, 
+        #1a252f 100%);
+    color: #ecf0f1;
+    padding: 25px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+th:nth-child(1) { border-right: 2px solid rgba(255,255,255,0.2); }
+th:nth-child(2) { border-right: 2px solid rgba(255,255,255,0.2); }
+th:nth-child(3) { border-right: 2px solid rgba(255,255,255,0.2); }
+
+td {
+    padding: 25px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(44,62,80,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+tr:nth-child(even) {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.9) 0%, 
+        rgba(248,249,250,0.8) 100%);
+}
+
+tr:hover {
+    background: linear-gradient(135deg, 
+        rgba(212,175,55,0.15) 0%, 
+        rgba(255,215,0,0.1) 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(212,175,55,0.2);
+}
+
+/* Imágenes oficiales */
+img {
+    width: 140px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    border: 3px solid #d4af37;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+img:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 
+        0 25px 50px rgba(212,175,55,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    border-color: #ffd700;
+}
+
+/* Columna CV */
+td:last-child {
+    font-style: italic;
+    color: #7f8c8d;
+    font-weight: 500;
+    background: linear-gradient(135deg, 
+        rgba(44,62,80,0.05), 
+        rgba(52,152,219,0.05));
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    position: relative;
+}
+
+td:last-child::before {
+    content: '📄';
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Nombres de candidatos */
+td:nth-child(1) {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Partidos políticos */
+td:nth-child(2) {
+    font-weight: 600;
+    color: #34495e;
+    background: rgba(52,152,219,0.1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(52,152,219,0.2);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    table {
+        font-size: 0.95rem;
+    }
+    
+    img {
+        width: 120px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    table {
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+    
+    th, td {
+        padding: 15px 10px;
+    }
+    
+    img {
+        width: 100px;
+        height: 120px;
+    }
+    
+    ul li, ol li {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Animaciones elegantes */
+tr {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+tr:nth-child(odd) { animation-delay: 0.1s; }
+tr:nth-child(even) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar presidencial */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(44,62,80,0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #d4af37, #ffd700);
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+}
+
+/* Loading effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #ffd700);
+    animation: loading 3s ease-in-out infinite;
+    z-index: 1000;
+}
+
+@keyframes loading {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}

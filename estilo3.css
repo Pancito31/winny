@@ -1,0 +1,161 @@
+/* estilo3.css - Versión Optimizada SIN PARPADEO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+th {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+tr {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden; /* Evita parpadeo */
+    will-change: transform; /* Optimiza rendimiento */
+}
+
+tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+tr:nth-child(even):hover {
+    background: rgba(248, 250, 255, 0.98) !important;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:nth-child(1) { /* Región */
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    background: linear-gradient(90deg, transparent, rgba(79, 172, 254, 0.08));
+}
+
+td:nth-child(2) { /* Candidato */
+    font-size: 1rem;
+    color: #34495e;
+}
+
+td:nth-child(3) { /* Imagen */
+    text-align: center;
+    padding: 15px 20px;
+}
+
+td:nth-child(4) { /* Partido */
+    font-weight: 600;
+    color: #27ae60;
+    font-size: 1.05rem;
+}
+
+/* Imágenes optimizadas */
+img {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+}
+
+tr:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    h1 { font-size: 2.2rem; margin-bottom: 20px; }
+    th, td { padding: 15px 12px; }
+    img { height: 110px !important; width: 150px !important; }
+}
+
+@media (max-width: 480px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    th, td { min-width: 130px; }
+    img { height: 90px !important; width: 120px !important; }
+}
+
+/* Animación de entrada suave (UNA SOLA VEZ) */
+table {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optimizaciones adicionales para rendimiento */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Evita repaints innecesarios */
+tr, td, th, img {
+    will-change: transform;
+    contain: layout style paint;
+}

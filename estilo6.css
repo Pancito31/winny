@@ -1,0 +1,362 @@
+/* ========================================
+   ESTILO PROFESIONAL - ELECCIONES 2026
+   Diseño institucional y responsive
+======================================== */
+
+/* Reset y variables CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --accent-gold: #d4af37;
+    --accent-blue: #3498db;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%, 
+        #0f2027 100%);
+    min-height: 100vh;
+}
+
+/* NAVEGACIÓN PRINCIPAL */
+.principal {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--accent-gold);
+}
+
+.principal h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.principal h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), #ffd700);
+    border-radius: 2px;
+}
+
+.principal ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.principal ul > li {
+    position: relative;
+}
+
+.principal a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.principal a:hover {
+    background: linear-gradient(135deg, var(--accent-blue), var(--secondary-color));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* SUBMENÚ */
+.submenu {
+    position: relative;
+}
+
+.submenu ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.98);
+    min-width: 220px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-top: 10px;
+}
+
+.submenu:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu ul li {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.submenu ul li:last-child {
+    border-bottom: none;
+}
+
+.submenu ul a {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+}
+
+/* CONTENIDO PRINCIPAL */
+.padre {
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.hijo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* CARDS DE CANDIDATOS */
+.nieto {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.nieto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue), var(--accent-gold));
+}
+
+.nieto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+.nieto h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.nieto h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.nieto img {
+    display: block;
+    margin: 0 auto 1.5rem;
+    border-radius: 15px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    border: 4px solid rgba(212,175,55,0.3);
+    transition: all 0.4s ease;
+}
+
+.nieto img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-gold);
+    box-shadow: 0 25px 50px rgba(212,175,55,0.4);
+}
+
+.nieto p {
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    padding: 12px;
+    background: rgba(52,152,219,0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+/* LISTAS */
+.nieto li {
+    list-style: none;
+    padding: 12px 0;
+    padding-left: 2rem;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.nieto li:last-child {
+    border-bottom: none;
+}
+
+.nieto li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nieto li:hover {
+    padding-left: 2.5rem;
+    background: rgba(212,175,55,0.05);
+    border-radius: 8px;
+    margin: 0 -1rem;
+    padding-right: 1rem;
+}
+
+.nieto strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    display: block;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .hijo {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .principal h1 {
+        font-size: 1.8rem;
+    }
+    
+    .principal ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .hijo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .nieto {
+        padding: 2rem;
+    }
+    
+    .nieto h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .padre {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+    
+    .nieto img {
+        width: 160px;
+        height: 120px;
+    }
+}
+
+/* ANIMACIONES */
+.nieto {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.nieto:nth-child(1) { animation-delay: 0.1s; }
+.nieto:nth-child(2) { animation-delay: 0.2s; }
+.nieto:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLLBAR PROFESIONAL */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--accent-gold), #ffd700);
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffd700, var(--accent-gold));
+}
